@@ -1,24 +1,15 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios';
+import PokemonCollections from './components/PokemonCollections';
+import { singlePokemon } from './interface';
 
 interface Pokemon {
   name: string
   url: string
 }
 
-interface singlePokemon {
-  id: number
-  name: string
-  sprites: {
-    front_default: string
-  }
-  types: {
-    type: {
-      name: string
-    }
-  }
-}
+
 
 function App() {
 
@@ -49,7 +40,10 @@ function App() {
   return (
     <section className='app-section'>
       Pokemon
+      <PokemonCollections pokemons={pokemons}/>
+      
     </section>
+    
   )
 }
 
